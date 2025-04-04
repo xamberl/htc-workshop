@@ -1,0 +1,4 @@
+Linear regression (y = mx + b):
+m = 0.205 b = -348.495
+Estimated life expectancy for Brazil in the year 2010
+63.328

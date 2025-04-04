@@ -1,0 +1,36 @@
+# least_squares.sub - an example HTCondor submit file
+# for passing arguments
+
+# Software environment
+container_image = docker://python:3.11
+
+# Custom variable can be specified
+country = Brazil
+
+# Specify your executable and your arguments
+# Usage: least_squares.py [CSV] [Country] [Year, optional]
+executable = least_squares_output.sh
+arguments = $(country)
+
+# Specify the log, standard error, and standard output
+# (or screen output) files
+log = $(country).log
+error = $(country).err
+output = $(country).out
+
+# We need to also transfer the csv file for the
+# calculation
+transfer_input_files = gapminder-life-expectancy.csv, least_squares.py
+
+# Transfer output.tar.gz and transfer it to staging
+# Also transfer Brazil_2005.txt out of its subdirectory and into /home
+transfer_output_files = output.tar.gz, output/$(country)_2005.txt
+transfer_output_remaps = "output.tar.gz = osdf:///chtc/staging/netid/output.tar.gz"
+
+# Requirements for our calculation
+request_cpus = 1
+request_memory = 1GB
+request_disk = 1GB
+
+# Tell HTCondor to run 1 instance of our calculation
+queue

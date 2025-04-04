@@ -1,0 +1,17 @@
+# job.sub - practice troubleshooting
+executable = job.sh
+
+transfer_input_files = my-input.txt
+
+# Specify the log, standard error, and standard output
+# (or screen output) files
+log = job.log
+error = job.err
+output = job.out
+
+# Requirements for our calculation
+request_cpus = 1
+request_memory = 1GB
+request_disk = 1GB
+
+queue
