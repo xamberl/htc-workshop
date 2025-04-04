@@ -3,7 +3,7 @@
 Examples for running jobs on the CHTC's HTC system. These examples may be modified and shared.
 
 ## life-expectancy
-An example on how to submit jobs. Can be modified to submit multiple jobs.
+An example on how to submit jobs, including multiple jobs.
 
 ## output-files
 An example on how to transfer output files with `transfer_output_files` and `transfer_output_remaps`.
