@@ -10,4 +10,4 @@ do
 done
 
 # Compress output directory as a tar.gz file
-tar -xzf output.tar.gz output
+tar -czf output.tar.gz output
